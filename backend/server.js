@@ -75,10 +75,23 @@ app.post('/likeGame', function (req, res) {
     // Already liked, so remove it
     if (userProfile.likedGames && userProfile.likedGames.includes(UUID)) {
       util.removeFromDocumentField(db, admin, "users", username, "likedGames", UUID);
-      res.send({ status: false });
+
+      // Remove 1 like from the game object
+      util.readDocument(db, "games", UUID, doc => {
+        util.updateDocument(db, "games", UUID, {likes: doc.likes - 1}, (_) => {
+          res.send({ status: false });
+        });
+      });
+      
     } else {
       util.addToDocumentField(db, admin, "users", username, "likedGames", UUID);
-      res.send({ status: true });
+
+      // Add 1 like to the game object
+      util.readDocument(db, "games", UUID, doc => {
+        util.updateDocument(db, "games", UUID, {likes: doc.likes + 1}, (_) => {
+          res.send({ status: true });
+        });
+      });
     }
   });
 });

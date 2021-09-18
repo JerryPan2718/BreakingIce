@@ -33,6 +33,14 @@ function readCollection(db, collection, cb) {
   });
 }
 
+function updateDocument(db, collection, document, data, cb) {
+  db.collection(collection).doc(document).update(data).then((writeResult) =>
+    cb(data)
+  ).catch(err => {
+    cb({ error: "Update Document Error" })
+  });
+}
+
 async function addToDocumentField(db, admin, collection, document, key, value) {
   const docRef = db.collection(collection).doc(document);
   let payload = {}
@@ -54,6 +62,7 @@ module.exports = {
   writeDocument,
   readDocument,
   readCollection,
+  updateDocument,
   addToDocumentField,
   removeFromDocumentField
 };
