@@ -13,22 +13,22 @@ import ButtonAppBar from './Components/ButtonAppBar';
 import AddGame from './pages/AddGame';
 import Explore from './pages/Explore';
 import Profile from './pages/Profile';
-
+import Calendar from 'react-calendar';
 function App() {
 
   return (
     <div className="App">
       <header className="App-header">
         <Router>
-          <ButtonAppBar/>
-            <div>
-              <Switch>
-                <Route exactly component={Explore} path="/explore" />
-                <Route exactly component={AddGame} path="/add-game" />
-                <Route exactly component={Profile} path="/profile" />
-              </Switch>
-            </div>
-          </Router>
+          <ButtonAppBar />
+          <div>
+            <Switch>
+              <Route exactly component={Explore} path="/explore" />
+              <Route exactly component={AddGame} path="/add-game" />
+              <Route exactly component={Profile} path="/profile" />
+            </Switch>
+          </div>
+        </Router>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
