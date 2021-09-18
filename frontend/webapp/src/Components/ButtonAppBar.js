@@ -17,6 +17,9 @@ import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import { makeStyles, ThemeProvider, createTheme } from '@material-ui/core/styles'
 import { orange } from '@mui/material/colors';
 
+import AddGame from '../pages/AddGame';
+import Explore from '../pages/Explore';
+
 const useStyles = makeStyles({
   root: {
     background: 'linear-gradient(45deg, #FFF, #FFF)',

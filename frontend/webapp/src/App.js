@@ -12,12 +12,22 @@ import {
 import ButtonAppBar from './Components/ButtonAppBar';
 import Navigation from './Components/Navigation';
 
+import AddGame from './pages/AddGame';
+import Explore from './pages/Explore';
+
 function App() {
 
   return (
     <div className="App">
       <header className="App-header">
         <ButtonAppBar/>
+        <Router>
+          <Switch>
+            <Route path="/explore" component={Explore} exact />
+            <Route path="/add-game" component={AddGame} exact />
+          </Switch>
+        </Router>
+
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
