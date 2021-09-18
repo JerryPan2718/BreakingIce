@@ -13,7 +13,7 @@ import { orange } from '@mui/material/colors';
 
 const useStyles = makeStyles({
   root: {
-    background: 'linear-gradient(45deg, #FFF, #FFF)',
+    background: 'linear-gradient(45deg, #e3d0f5, #d0e4f5)',
     border: 0,
     marginBottom: 15,
     color: 'black',
