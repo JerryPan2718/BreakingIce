@@ -16,9 +16,8 @@ import ButtonAppBar from './Components/ButtonAppBar';
 import AddGame from './pages/AddGame';
 import Explore from './pages/Explore';
 import Profile from './pages/Profile';
-
+import Calendar from 'react-calendar';
 function App() {
-
   return (
         <Router>
           <div>
