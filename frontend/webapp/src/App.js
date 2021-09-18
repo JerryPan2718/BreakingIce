@@ -24,20 +24,14 @@ function App() {
           <div>
             <ButtonAppBar/>
           </div>
-          <div class="App-body">
-            <Container maxWidth="lg">
-              <Box
-                sx={{
-                  bgcolor: 'rgba(255, 255, 255, 0.6)',
-                  padding: '5px 10px'
-                }}
-              >
+          <div>
+            <Container maxWidth="sm" class="App-body">
                 <Switch>
+                  <Route exactly component={Explore} path="/" />
                   <Route exactly component={Explore} path="/explore" />
                   <Route exactly component={AddGame} path="/add-game" />
                   <Route exactly component={Profile} path="/profile" />
                 </Switch>
-              </Box>
             </Container>
           </div>
         </Router>
