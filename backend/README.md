@@ -1,6 +1,6 @@
 # Backend API
 
-Server accepts only GET requests. 
+Server accepts only POST requests. 
 
 ## gameObject
 A game is represented as JSON array of the following form:

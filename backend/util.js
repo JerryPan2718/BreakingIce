@@ -33,8 +33,27 @@ function readCollection(db, collection, cb) {
   });
 }
 
+async function addToDocumentField(db, admin, collection, document, key, value) {
+  const docRef = db.collection(collection).doc(document);
+  let payload = {}
+  payload[key] = admin.firestore.FieldValue.arrayUnion(value);
+  const unionRes = await docRef.update(payload);
+  return unionRes;
+}
+
+async function removeFromDocumentField(db, admin, collection, document, key, value) {
+  const docRef = db.collection(collection).doc(document);
+  let payload = {}
+  payload[key] = admin.firestore.FieldValue.arrayRemove(value);
+  const unionRes = await docRef.update(payload);
+  return unionRes;
+}
+
+
 module.exports = {
   writeDocument,
   readDocument,
-  readCollection
+  readCollection,
+  addToDocumentField,
+  removeFromDocumentField
 };

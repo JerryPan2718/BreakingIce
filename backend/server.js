@@ -14,35 +14,9 @@ const { v4: uuidv4 } = require('uuid');
 var util = require('./util');
 
 app.use(bodyParser.urlencoded({ extended: false }))
-
-// parse application/json
 app.use(bodyParser.json())
 
 console.log("Starting up server...");
-
-// Test read to db
-//util.readDocument(db, "games", "test", (z) => { console.log(z) });
-//util.writeDocument(db, "games", "test2", { field2: "field2 value" }, (z) => { console.log(z) });
-
-/*
-  (data) => {
-    if (data) {
-      res.send(data);
-    } else {
-      res.send({ status: false });
-    }
-  }*/
-
-// getTags endpoint
-app.post('/getTags', function (req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-
-  util.readCollection(db, 'tags', docs => {
-    let tags = docs.map(doc => doc.data().tagValue);
-    res.send(tags);
-  });
-});
 
 // addGame endpoint
 app.post('/addGame', function (req, res) {
@@ -55,10 +29,60 @@ app.post('/addGame', function (req, res) {
     if (writeResult.err) {
       res.send(writeResult);
     }
-    game.tags.forEach(tag => util.writeDocument(db, "tags", tag, {tagValue: tag}, (_) => _));
+
+    // Add tags to global tag list
+    game.tags.forEach(tag => util.writeDocument(db, "tags", tag, { tagValue: tag }, (_) => _));
+
+    // Add game to user's profile
+    util.addToDocumentField(db, admin, "users", game.creatorName, "ownedGames", UUID);
+
     res.send(game);
   });
 });
+
+
+// getTags endpoint
+app.post('/getTags', function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+  util.readCollection(db, 'tags', docs => {
+    let tags = docs.map(doc => doc.data().tagValue);
+    res.send(tags);
+  });
+});
+
+// getUserProfile endpoint
+app.post('/getUserProfile', function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+  let username = req.body.username;
+  util.readDocument(db, 'users', username, userProfile => {
+    res.send(userProfile);
+  });
+});
+
+// likeGame endpoint
+app.post('/likeGame', function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+  let username = req.body.username;
+  let UUID = req.body.UUID;
+
+  util.readDocument(db, 'users', username, userProfile => {
+    // Already liked, so remove it
+    if (userProfile.likedGames && userProfile.likedGames.includes(UUID)) {
+      util.removeFromDocumentField(db, admin, "users", username, "likedGames", UUID);
+      res.send({ status: false });
+    } else {
+      util.addToDocumentField(db, admin, "users", username, "likedGames", UUID);
+      res.send({ status: true });
+    }
+  });
+});
+
 
 
 app.listen(port, function () { }); //starts the server
