@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ButtonAppBar/>
+        <ButtonAppBar />
         <Router>
           <Switch>
             <Route path="/explore" component={Explore} exact />
