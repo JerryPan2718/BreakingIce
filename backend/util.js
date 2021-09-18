@@ -3,7 +3,7 @@
   Document: Key - How you will access this data later. Usually username
   Data: Value - JSON object of data you want to store
 */
-function writeData(db, collection, document, data, cb) {
+function writeDocument(db, collection, document, data, cb) {
   try {
     db.collection(collection).doc(document).set(data).then((writeResult) =>
       cb(data));
@@ -17,15 +17,24 @@ function writeData(db, collection, document, data, cb) {
   Document: Key - How you plan to access this data
   cb: callback function since reading data is asynchronous
 */
-function readData(db, collection, document, cb) {
+function readDocument(db, collection, document, cb) {
   db.collection(collection).doc(document).get().then((doc) =>
     cb(doc.data())
   ).catch(err => {
-    cb({ error: "Read Error" })
+    cb({ error: "Read Document Error" })
+  });
+}
+
+function readCollection(db, collection, cb) {
+  db.collection(collection).get().then((col) =>
+    cb(col.docs)
+  ).catch(err => {
+    cb({ error: "Read Collection Error" })
   });
 }
 
 module.exports = {
-  writeData,
-  readData,
+  writeDocument,
+  readDocument,
+  readCollection
 };
