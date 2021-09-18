@@ -1,0 +1,15 @@
+{
+  "name": "gbab-backend",
+  "version": "1.0.0",
+  "description": "Backend for gbab",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Tang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase-admin": "^9.11.1"
+  }
+}
