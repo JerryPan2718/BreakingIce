@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -39,7 +40,7 @@ export default function ButtonAppBar() {
     }>
       
       <Toolbar style={{justifyContent: 'center'}}>
-        <Button color="primary" style={{ marginRight: 50 }}>
+        <Button color="primary" style={{ marginRight: 50 }} component={Link} to="/some-route" color="primary">
           <Typography variant="h6" component='div'>
             Explore
           </Typography>
