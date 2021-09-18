@@ -5,29 +5,30 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import ButtonAppBar from './Components/ButtonAppBar';
-import Navigation from './Components/Navigation';
-import Calendar from './Components/Calendar';
 
 import AddGame from './pages/AddGame';
 import Explore from './pages/Explore';
+import Profile from './pages/Profile';
 
 function App() {
 
   return (
     <div className="App">
       <header className="App-header">
-        <ButtonAppBar/>
         <Router>
-          <Switch>
-            <Route path="/explore" component={Explore} exact />
-            <Route path="/add-game" component={AddGame} exact />
-          </Switch>
-        </Router>
+          <ButtonAppBar/>
+            <div>
+              <Switch>
+                <Route exactly component={Explore} path="/explore" />
+                <Route exactly component={AddGame} path="/add-game" />
+                <Route exactly component={Profile} path="/profile" />
+              </Switch>
+            </div>
+          </Router>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
