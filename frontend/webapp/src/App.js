@@ -11,6 +11,7 @@ import {
 
 import ButtonAppBar from './Components/ButtonAppBar';
 import Navigation from './Components/Navigation';
+import Calendar from './Components/Calendar';
 
 import AddGame from './pages/AddGame';
 import Explore from './pages/Explore';
@@ -27,7 +28,6 @@ function App() {
             <Route path="/add-game" component={AddGame} exact />
           </Switch>
         </Router>
-
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
