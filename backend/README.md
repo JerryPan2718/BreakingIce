@@ -79,13 +79,12 @@ Endpoint for a user to like a game. If the user already liked the game, then the
 ---
 
 ### queryGames
-Endpoint for a user to queryGames. Textbox contains the text of the search textbox to do string similarity matching with the game descriptions and names in the database. The tags specified must be a subset (or complete set) of the returned games's tags.
+Endpoint for a user to queryGames. The tags specified must be a subset (or complete set) of the returned games's tags. The returned games are ordered from most to least likes.
 ###### Endpoint
 ```
 <BASE_URL>/queryGames
 ```
 ###### Parameters
-- **<code>String</code> textbox**
 - **<code>String[]</code> tags**
 
 
