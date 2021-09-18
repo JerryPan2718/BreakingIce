@@ -2,6 +2,8 @@
 
 Server accepts only POST requests. 
 
+BASE_URL = https://hackmit2021.loca.lt
+
 ## gameObject
 A game is represented as JSON array of the following form:
 - **<code>String</code> UUID** - Universally unique identifier for the game.
