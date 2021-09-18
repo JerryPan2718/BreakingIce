@@ -26,21 +26,21 @@ const useStyles = makeStyles({
 export default function ButtonAppBar() {
   const classes = useStyles()
   return (
-    <AppBar className={classes.root} 
-    title={
-      <IconButton
-      size="large"
-      edge="start"
-      color="primary"
-      aria-label="menu"
-      sx={{ mr: 2 }}
-      >
-        <SportsEsportsIcon />
-      </IconButton >
-    }>
-      
-      <Toolbar style={{justifyContent: 'center'}}>
-        <Button color="primary" style={{ marginRight: 50 }} component={Link} to="/some-route" color="primary">
+    <AppBar className={classes.root}
+      title={
+        <IconButton
+          size="large"
+          edge="start"
+          color="primary"
+          aria-label="menu"
+          sx={{ mr: 2 }}
+        >
+          <SportsEsportsIcon />
+        </IconButton >
+      }>
+
+      <Toolbar style={{ justifyContent: 'center' }}>
+        <Button color="primary" style={{ marginRight: 50 }}>
           <Typography variant="h6" component='div'>
             Explore
           </Typography>
