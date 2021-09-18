@@ -11,13 +11,15 @@ import {
 
 import ButtonAppBar from './Components/ButtonAppBar';
 import Navigation from './Components/Navigation';
+import Calendar from './Components/Calendar';
 
 function App() {
 
   return (
     <div className="App">
       <header className="App-header">
-        <ButtonAppBar/>
+        <ButtonAppBar />
+        <Calendar />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
