@@ -1,5 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -40,21 +45,34 @@ export default function ButtonAppBar() {
       }>
 
       <Toolbar style={{ justifyContent: 'center' }}>
-        <Button color="primary" style={{ marginRight: 50 }}>
-          <Typography variant="h6" component='div'>
-            Explore
-          </Typography>
-        </Button>
-        <Button color="primary" style={{ marginRight: 50 }}>
-          <Typography variant="h6" component='div'>
-            Add Game
-          </Typography>
-        </Button>
-        <Button color="primary" style={{ marginRight: 50 }}>
-          <Typography variant="h6" component='div'>
-            Profile
-          </Typography>
-        </Button>
+        <Router>
+          <nav>
+            <Button
+              color="primary"
+              style={{ marginRight: 50 }}
+              component={Link} to="/explore" color="primary">
+              <Typography variant="h6" component='div'>
+                Explore
+              </Typography>
+            </Button>
+            <Button
+              color="primary"
+              style={{ marginRight: 50 }}
+              component={Link} to="/add-game" color="primary">
+              <Typography variant="h6" component='div'>
+                Add Game
+              </Typography>
+            </Button>
+            <Button
+              color="primary"
+              style={{ marginRight: 50 }}
+              component={Link} to="/profile" color="primary">
+              <Typography variant="h6" component='div'>
+                Profile
+              </Typography>
+            </Button>
+          </nav>
+        </Router>
       </Toolbar>
     </AppBar>
   );
