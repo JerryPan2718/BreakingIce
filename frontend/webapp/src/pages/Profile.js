@@ -1,55 +1,72 @@
 import React from "react";
-import logo from '../user-profile-modified.png';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
+import { Box, Grid, Container } from "@mui/material";
+import logo from "../user-profile-modified.png";
+import GameItem from "../Components/GameItem";
+import postRequest from "../util/postRequest";
 
+function FormRow() {
+  return (
+    <React.Fragment>
+      <Grid item xs={4}>
+        <GameItem
+          name='game1'
+          tags={["physical", "fun"]}
+          description='this is the description for the game this is the description for the game this is the description for the game
+          this is the description for the game this is the description for the game'
+        />
+      </Grid>
+      <Grid item xs={4}>
+        <GameItem
+          name='game1'
+          tags={["physical", "fun"]}
+          description='this is the description for the game this is the description for the game this is the description for the game
+            this is the description for the game this is the description for the game'
+        />
+      </Grid>
+      <Grid item xs={4}>
+        <GameItem
+          name='game1'
+          tags={["physical", "fun"]}
+          description='this is the description for the game this is the description for the game this is the description for the game
+            this is the description for the game this is the description for the game'
+        />
+      </Grid>
+    </React.Fragment>
+  );
+}
 
-// import { View, StyleSheet, Text } from 'react-native';
+function Profile() {
+  const [gameList, setGameList] = React.useState([]);
+  React.useEffect(() => {
+    postRequest("getUserProfile", { username: "sampleUser" }, res => {
+      setGameList(res);
+      console.log(gameList);
+    });
+  }, []);
 
-const Profile = () => (
+  return (
     <div>
-        <Container maxWidth="md">
-            <Box sx={{ bgcolor: '#cfe8fc', height: '40vh' }}>
+      <Container maxWidth='md'>
+        <Box sx={{ bgcolor: "#cfe8fc", height: "40vh" }}>
+          <h1 className='profile_page' className='title is-1'>
+            Profile
+          </h1>
+          <img src={logo} alt='Logo' />;
+        </Box>
+      </Container>
 
-                <h1 className="profile_page" className="title is-1">Profile</h1>
-                {/* <View style={styles.leftContainer}>
-            <Text style={[styles.text, { textAlign: 'left' }]}>
-                {'<'}
-            </Text>
-        </View> */}
-                <img src={logo} alt="Logo" />;
-            </Box>
-        </Container>
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={3}>
+          <Grid container item spacing={3}>
+            <FormRow />
+          </Grid>
+          <Grid container item spacing={3}>
+            <FormRow />
+          </Grid>
+        </Grid>
+      </Box>
     </div>
-);
-
-// const styles = StyleSheet.create({
-//     navBar: {
-//         height: 60,
-//         flexDirection: 'row',
-//         justifyContent: 'space-between',
-//         alignItems: 'center',
-//         backgroundColor: 'blue',
-//     },
-//     leftContainer: {
-//         flex: 1,
-//         flexDirection: 'row',
-//         justifyContent: 'flex-start',
-//         backgroundColor: 'green'
-//     },
-//     rightContainer: {
-//         flex: 1,
-//         flexDirection: 'row',
-//         justifyContent: 'flex-end',
-//         alignItems: 'center',
-//         backgroundColor: 'red',
-//     },
-//     rightIcon: {
-//         height: 10,
-//         width: 10,
-//         resizeMode: 'contain',
-//         backgroundColor: 'white',
-//     }
-// });
+  );
+}
 
 export default Profile;
