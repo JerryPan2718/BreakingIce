@@ -1,11 +1,19 @@
+import logo from "./logo.svg";
 import "./App.css";
 
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 
 import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
 
 import ButtonAppBar from "./Components/ButtonAppBar";
+import FooterBar from "./Components/FooterBar";
 
 import AddGame from "./pages/AddGame";
 import Explore from "./pages/Explore";
@@ -22,6 +30,7 @@ function App() {
               <Redirect to="/explore" />
             </Switch>
         </Container>
+        <FooterBar />
     </Router>
   );
 }
