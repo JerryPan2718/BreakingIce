@@ -38,6 +38,7 @@ const handleSubmit = (event) => {
       name: data.get("gameName"),
       description: data.get("description"),
       rules: data.get("rules"),
+      link: data.get("link"),
       creatorName: "sampleUser",
       minPlayers: data.get("minPlayers"),
       maxPlayers: data.get("maxPlayers"),
@@ -109,6 +110,16 @@ function AddGame() {
                 rows={4}
                 name="rules"
                 label="Rules"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                multiline
+                required
+                rows={1}
+                name="link"
+                label="External Hyperlink"
               />
             </Grid>
             <Grid item xs={12} sm={6}>
