@@ -56,12 +56,12 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
-let tagsSelected = []
+let tagsSelected = [];
 
 function AddGame() {
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ bgcolor: 'rgba(255, 255, 255, 0.6)', padding: '5px 10px' }}>
+      <Box sx={{ bgcolor: 'rgba(255, 255, 255, 0.8)', padding: '5px 10px' }}>
           <PageTitle name='Add Game' />
           <Typography variant='h5'>
               Share your game idea with the community! Enter a short description for your game below, 
@@ -116,6 +116,7 @@ function AddGame() {
                   required
                   name="minPlayers"
                   label="Minimum Number of Players"
+                  type="number"
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -124,6 +125,7 @@ function AddGame() {
                   required
                   name="maxPlayers"
                   label="Maximum Number of Players"
+                  type="number"
                 />
               </Grid>
 

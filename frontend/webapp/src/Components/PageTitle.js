@@ -7,7 +7,7 @@ const theme = createTheme({
     typography: {
       h2: {
         fontSize: 72,
-        marginTop: 10,
+        marginTop: 40,
         marginLeft: 50,
         marginRight: 50,
         fontWeight: 'bold'
