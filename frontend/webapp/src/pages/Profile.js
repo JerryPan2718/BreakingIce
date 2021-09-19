@@ -1,249 +1,72 @@
-import React from "react";
+import * as React from 'react';
 
-const Profile = () => (
-    <div>
-        <h1 className="title is-1">This is the Profile Page</h1>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-        <p>
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus
-            et ultrices posuere cubilia curae; Duis consequat nulla ac ex consequat,
-            in efficitur arcu congue. Nam fermentum commodo egestas.
-        </p>
-    </div>
-);
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
+import GameItem from '../Components/GameItem';
+import postRequest from '../util/postRequest';
+
+const Item = styled(Paper)(({ theme }) => ({
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
+  
+function FormRow() {
+
+    return (
+      <React.Fragment>
+        <Grid item xs={4}>
+          <GameItem 
+          name='game1'
+          tags={['physical', 'fun']}
+          description='this is the description for the game this is the description for the game this is the description for the game
+          this is the description for the game this is the description for the game'/>
+        </Grid>
+        <Grid item xs={4}>
+            <GameItem 
+            name='game1'
+            tags={['physical', 'fun']}
+            description='this is the description for the game this is the description for the game this is the description for the game
+            this is the description for the game this is the description for the game'/>
+        </Grid>
+        <Grid item xs={4}>
+            <GameItem 
+            name='game1'
+            tags={['physical', 'fun']}
+            description='this is the description for the game this is the description for the game this is the description for the game
+            this is the description for the game this is the description for the game'/>
+        </Grid>
+      </React.Fragment>
+    );
+  }
+
+function Profile() {
+
+    const [gameList, setGameList] = React.useState([]);
+    React.useEffect(
+        ()=>{
+            postRequest("getUserProfile", {username: "sampleUser"}, (res) => {
+                setGameList(res);
+                console.log(gameList);
+            })
+        }, []);
+    
+    return (
+        <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={3}>
+            <Grid container item spacing={3}>
+            <FormRow />
+            </Grid>
+            <Grid container item spacing={3}>
+            <FormRow />
+            </Grid>
+        </Grid>
+        </Box>
+    );
+};
 
 export default Profile;

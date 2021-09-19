@@ -3,10 +3,6 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import Input from "@mui/material/Input";
-import FormHelperText from "@mui/material/FormHelperText";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -59,8 +55,7 @@ function AddGame() {
       postRequest("getTags", {}, (res) => {
         setTags(res);
       })
-    }, []
-  );
+    }, []);
 
   return (
     <ThemeProvider theme={theme}>
