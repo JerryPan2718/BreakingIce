@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { Autocomplete, Button, TextField, Container } from "@mui/material";
+import { Autocomplete, Button, TextField } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -10,7 +10,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import postRequest from "../util/postRequest";
 import "./Explore.css";
-import Card from "@mui/material/Card";
 
 const Explore = () => {
   const [searchResults, setSearchResults] = useState([]);
@@ -58,46 +57,46 @@ const Explore = () => {
             />
           )}
         />
-        
+
         {searchResults.length ? <center><h2>Game Results</h2></center> : ""}
-        
-            
-        
-          {searchResults
-            .sort((g1, g2) => g2.likes - g1.likes)
-            .map(game => {
-              const { name, likes, UUID, description } = game;
-              console.log(game);
-              return (
-                <Accordion key={UUID} expanded={expanded === UUID} onChange={handleChange(UUID)}>
-                    <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel2a-content"
-                    id="panel2a-header"
+
+
+
+        {searchResults
+          .sort((g1, g2) => g2.likes - g1.likes)
+          .map(game => {
+            const { name, likes, UUID, description } = game;
+            console.log(game);
+            return (
+              <Accordion key={UUID} expanded={expanded === UUID} onChange={handleChange(UUID)}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel2a-content"
+                  id="panel2a-header"
                 >
-                    <Typography>{name} [{likes} Likes]</Typography>
+                  <Typography>{name} [{likes} Likes]</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                    <Typography>
+                  <Typography>
                     {description}
-                    </Typography>
-                    <center style={{marginTop: 10}}>
+                  </Typography>
+                  <center style={{ marginTop: 10 }}>
                     <Button
-                        variant='contained'
-                        disableElevation
-                        onClick={() => {
-                            history.push(`/view/${UUID}`);
-                        }}
-                        >More Details</Button>
-                        
-                        </center>
+                      variant='contained'
+                      disableElevation
+                      onClick={() => {
+                        history.push(`/view/${UUID}`);
+                      }}
+                    >More Details</Button>
+
+                  </center>
                 </AccordionDetails>
-                </Accordion>
-              );
-            })}
-            
-        
-        <br/><br/><br/>
+              </Accordion>
+            );
+          })}
+
+
+        <br /><br /><br />
       </div>
     </div>
   );
