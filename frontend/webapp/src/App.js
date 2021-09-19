@@ -20,22 +20,18 @@ import Explore from "./pages/Explore";
 import Profile from "./pages/Profile";
 function App() {
   return (
-    <div>
-      <Router>
-        <div>
-          <ButtonAppBar />
-        </div>
-        <Container maxWidth='sm' class='App-body'>
-          <Switch>
-            <Route exactly component={Explore} path='/explore' />
-            <Route exactly component={AddGame} path='/add-game' />
-            <Route exactly component={Profile} path='/profile' />
-            <Redirect to='/explore' />
-          </Switch>
+    <Router>
+      <ButtonAppBar/>
+        <Container maxWidth="sm" class="App-body">
+            <Switch>
+              <Route exactly component={Explore} path="/explore" />
+              <Route exactly component={AddGame} path="/add-game" />
+              <Route exactly component={Profile} path="/profile" />
+              <Redirect to="/explore" />
+            </Switch>
         </Container>
-      </Router>
-      <FooterBar />
-    </div>
+        <FooterBar />
+    </Router>
   );
 }
 
