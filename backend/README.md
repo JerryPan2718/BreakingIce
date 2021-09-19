@@ -35,6 +35,20 @@ The user can use tags that are already existing or add their own new tags
 
 ---
 
+### getGame
+Endpoint to return the details of a singular game, given the `UUID`.
+###### Endpoint
+```
+<BASE_URL>/getGame
+```
+###### Parameters
+- **<code>String</code> UUID**
+
+###### Return Format
+- **<code>gameObject</code> game**
+
+---
+
 ### getTags
 Endpoint to return a list of all tags. The frontend will suggest these tags or allow the user to make new tags
 ###### Endpoint

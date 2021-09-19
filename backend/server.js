@@ -32,6 +32,7 @@ app.post('/addGame', function (req, res) {
   let game = req.body.game;
   let UUID = uuidv4();
   game.UUID = UUID;
+  game.likes = 0;
   util.writeDocument(db, "games", UUID, game, (writeResult) => {
     if (writeResult.err) {
       res.send(writeResult);
@@ -47,6 +48,16 @@ app.post('/addGame', function (req, res) {
   });
 });
 
+// getGame endpoint
+app.post('/getGame', function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+
+  let UUID = req.body.UUID;
+  util.readDocument(db, 'games', UUID, game => {
+    res.send(game);
+  });
+});
 
 // getTags endpoint
 app.post('/getTags', function (req, res) {
