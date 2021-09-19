@@ -2,6 +2,11 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { Autocomplete, Button, TextField, Container } from "@mui/material";
 import { useHistory } from "react-router-dom";
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import postRequest from "../util/postRequest";
 import "./Explore.css";
@@ -13,18 +18,25 @@ const Explore = () => {
   const [selectedTags, setSelectedTags] = useState([]);
   const history = useHistory();
 
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
   useEffect(() => {
     postRequest("getTags", {}, res => {
       console.log(res);
       setTags(res);
     });
+    postRequest("queryGames", { tags: [] }, setSearchResults);
   }, []);
 
   return (
     <div className='root-container'>
       <div className='top-content-container' id='description'>
-        <h1 className='title is-1'>How to Play the Game</h1>
-        <p>LMFAO</p>
+        <center><h1 className='title is-1'>Search for a game</h1></center>
+        <p>Select tags for games you want to search for!</p>
       </div>
 
       <div className='bottom-content-container' id='search bar'>
@@ -36,44 +48,56 @@ const Explore = () => {
           defaultValue={[]}
           onChange={(_, value, reason, details) => {
             setSelectedTags(value);
-            setSearchResults([]);
+            postRequest("queryGames", { tags: value }, setSearchResults);
           }}
           renderInput={params => (
             <TextField
               {...params}
-              label='Type In the Game you Wanna Play...'
-              placeholder='Favorites'
+              label='Tags'
+              placeholder='Tags for the game you are looking for'
             />
           )}
         />
-        <br />
-        <Button
-          variant='contained'
-          disableElevation
-          onClick={() => {
-            postRequest("queryGames", { tags: selectedTags }, setSearchResults);
-          }}
-        >
-          Search for Games
-        </Button>
-        <Card>
+        
+        {searchResults.length ? <center><h2>Game Results</h2></center> : ""}
+        
+            
+        
           {searchResults
             .sort((g1, g2) => g2.likes - g1.likes)
             .map(game => {
-              const { name, likes, UUID } = game;
+              const { name, likes, UUID, description } = game;
               console.log(game);
               return (
-                <Container
-                  key={UUID}
-                  onClick={() => {
-                    history.push(`/view/${UUID}`);
-                  }}
+                <Accordion key={UUID} expanded={expanded === UUID} onChange={handleChange(UUID)}>
+                    <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel2a-content"
+                    id="panel2a-header"
                 >
-                  {name} {likes}
-                </Container>
+                    <Typography>{name} [{likes} Likes]</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>
+                    {description}
+                    </Typography>
+                    <center style={{marginTop: 10}}>
+                    <Button
+                        variant='contained'
+                        disableElevation
+                        onClick={() => {
+                            history.push(`/view/${UUID}`);
+                        }}
+                        >More Details</Button>
+                        
+                        </center>
+                </AccordionDetails>
+                </Accordion>
               );
             })}
-        </Card>
+            
+        
+        <br/><br/><br/>
       </div>
     </div>
   );
