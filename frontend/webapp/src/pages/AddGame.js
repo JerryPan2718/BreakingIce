@@ -11,6 +11,7 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import { useHistory } from "react-router-dom";
 
 import PageTitle from "../Components/PageTitle";
 
@@ -26,7 +27,7 @@ const theme = createTheme({
   },
 });
 
-const handleSubmit = (event) => {
+const handleSubmit = (event, history) => {
   event.preventDefault();
   console.log("posting");
   const data = new FormData(event.currentTarget);
@@ -45,13 +46,16 @@ const handleSubmit = (event) => {
       tags: tagsSelected,
     },
   };
-  postRequest(endpoint, postBody, (res) => console.log(res));
+  postRequest(endpoint, postBody, (game) => {
+    history.push(`/view/${game.UUID}`);
+  });
 };
 
 
 let tagsSelected = [];
 
 function AddGame() {
+  const history = useHistory();
 
   const [tags, setTags] = React.useState([]);
   
@@ -79,7 +83,7 @@ function AddGame() {
         <Box
           component="form"
           noValidate
-          onSubmit={handleSubmit}
+          onSubmit={(event) => handleSubmit(event, history)}
           sx={{ mt: 3, padding: 10 }}
         >
           <Grid container spacing={2}>
@@ -116,7 +120,6 @@ function AddGame() {
               <TextField
                 fullWidth
                 multiline
-                required
                 rows={1}
                 name="link"
                 label="External Hyperlink"
