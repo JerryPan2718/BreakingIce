@@ -16,7 +16,6 @@ function App() {
       <ButtonAppBar/>
         <Container maxWidth="sm" class="App-body">
             <Switch>
-              {/* <Route exactly component={Explore} path="/" /> */}
               <Route exactly component={Explore} path="/explore" />
               <Route exactly component={AddGame} path="/add-game" />
               <Route exactly component={Profile} path="/profile" />
