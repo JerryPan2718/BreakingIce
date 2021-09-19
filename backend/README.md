@@ -1,6 +1,8 @@
 # Backend API
 
-Server accepts only GET requests. 
+Server accepts only POST requests. 
+
+BASE_URL = https://hackmit2021.loca.lt
 
 ## gameObject
 A game is represented as JSON array of the following form:
@@ -8,6 +10,7 @@ A game is represented as JSON array of the following form:
 - **<code>String</code> name**
 - **<code>String</code> description**
 - **<code>String</code> rules**
+- **<code>String</code> creatorName** - username of creator of the game.
 - **<code>Integer</code> minPlayers**
 - **<code>Integer</code> maxPlayers**
 - **<code>Integer</code> likes**
@@ -22,7 +25,6 @@ Endpoint for a user to add a game to the database
 <BASE_URL>/addGame
 ```
 ###### Parameters
-- **<code>String</code> username**
 - **<code>gameObject</code> game**
   - `UUID` field should be left null
 The user can use tags that are already existing or add their own new tags
@@ -79,13 +81,12 @@ Endpoint for a user to like a game. If the user already liked the game, then the
 ---
 
 ### queryGames
-Endpoint for a user to queryGames. Textbox contains the text of the search textbox to do string similarity matching with the game descriptions and names in the database. The tags specified must be a subset (or complete set) of the returned games's tags.
+Endpoint for a user to queryGames. The tags specified must be a subset (or complete set) of the returned games's tags. The returned games are ordered from most to least likes.
 ###### Endpoint
 ```
 <BASE_URL>/queryGames
 ```
 ###### Parameters
-- **<code>String</code> textbox**
 - **<code>String[]</code> tags**
 
 
