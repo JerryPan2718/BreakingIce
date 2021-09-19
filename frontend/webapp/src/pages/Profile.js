@@ -1,16 +1,8 @@
 import React from "react";
-import { styled } from "@mui/material/styles";
-import { Box, Paper, Grid, Container } from "@mui/material";
+import { Box, Grid, Container } from "@mui/material";
 import logo from "../user-profile-modified.png";
 import GameItem from "../Components/GameItem";
 import postRequest from "../util/postRequest";
-
-const Item = styled(Paper)(({ theme }) => ({
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary
-}));
 
 function FormRow() {
   return (
