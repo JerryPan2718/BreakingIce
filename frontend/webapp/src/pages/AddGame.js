@@ -14,6 +14,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 
 import PageTitle from '../Components/PageTitle';
 
+import postRequest from '../util/postRequest.js';
 
 const theme = createTheme({
     typography: {
@@ -27,6 +28,8 @@ const theme = createTheme({
 
 const handleSubmit = (event) => {
   event.preventDefault();
+  console.log("posting");
+  postRequest("getTags", {}, (res) => console.log(res));
   const data = new FormData(event.currentTarget);
   // eslint-disable-next-line no-console
   console.log({
