@@ -2,22 +2,8 @@ import * as React from "react";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import "./Explore.css";
-import Searchbar from "../Components/Searchbar";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/material/Menu";
-import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import Card from "@mui/material/Card";
 
-import {
-  makeStyles,
-  ThemeProvider,
-  createTheme
-} from "@material-ui/core/styles";
-import { orange } from "@mui/material/colors";
 const Explore = () => (
   <div className='root-container'>
     <div className='top-content-container' id='description'>
@@ -43,6 +29,7 @@ const Explore = () => (
       />
       <Card></Card>
     </div>
+    <div></div>
   </div>
 );
 
