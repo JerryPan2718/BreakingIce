@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { Autocomplete, Button, TextField, Container } from "@mui/material";
+import { useHistory } from "react-router-dom";
+
 import postRequest from "../util/postRequest";
 import "./Explore.css";
 import Card from "@mui/material/Card";
@@ -9,6 +11,7 @@ const Explore = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [tags, setTags] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     postRequest("getTags", {}, res => {
@@ -58,11 +61,12 @@ const Explore = () => {
             .sort((g1, g2) => g2.likes - g1.likes)
             .map(game => {
               const { name, likes, UUID } = game;
+              console.log(game);
               return (
                 <Container
                   key={UUID}
                   onClick={() => {
-                    console.log(game);
+                    history.push(`/view/${UUID}`);
                   }}
                 >
                   {name} {likes}

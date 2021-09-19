@@ -16,6 +16,8 @@ import FooterBar from "./Components/FooterBar";
 import AddGame from "./pages/AddGame";
 import Explore from "./pages/Explore";
 import Profile from "./pages/Profile";
+import ViewGame from "./pages/ViewGame";
+
 function App() {
   return (
     <Router>
@@ -25,6 +27,7 @@ function App() {
           <Route exactly component={Explore} path='/explore' />
           <Route exactly component={AddGame} path='/add-game' />
           <Route exactly component={Profile} path='/profile' />
+          <Route component={ViewGame} path='/view/:uuid' />
           <Redirect to='/explore' />
         </Switch>
       </Container>
