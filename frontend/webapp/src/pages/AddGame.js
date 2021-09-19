@@ -36,7 +36,7 @@ const handleSubmit = (event) => {
     rules: data.get('rules'),
     minPlayers: data.get('minPlayers'),
     maxPlayers: data.get('maxPlayers'),
-    tags: tagsSelected
+    tags: tagsSelected  // List of Strings
   });
 };
 
@@ -133,7 +133,7 @@ function AddGame() {
                   id='tags-outlined'
                   options={top100Films}
                   getOptionLabel={option => option.tags}
-                  onChange={(event, value) => tagsSelected.push(value)}
+                  onChange={(event, value) => tagsSelected.push(value[value.length - 1].UUID)} //TODO: change this line with tag
                   renderInput={params => (
                     <TextField
                       {...params}
