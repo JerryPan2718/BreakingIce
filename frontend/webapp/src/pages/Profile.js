@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Container } from "@mui/material";
+import { Avatar, Box, Grid, Container } from "@mui/material";
 import logo from "../user-profile-modified.png";
 import GameItem from "../Components/GameItem";
 import postRequest from "../util/postRequest";
@@ -65,25 +65,26 @@ function Profile() {
     });
   }, []);
 
-
-
   if (loaded) {
     return (
       <div>
-        <Container maxWidth="md">
-          <Box sx={{ bgcolor: "#cfe8fc", height: "40vh" }}>
-            <h1 className="profile_page" className="title is-1">
-              Profile
-            </h1>
-            <img src={logo} alt="Logo" />;
-          </Box>
-        </Container>
+        <Box sx={{ flexGrow: 1 }}>
+          <h1
+            className='profile_page'
+            className='title is-1'
+            style={{ backgroundColor: "rgba(255, 255, 255, 0.8)", textAlign: "center" }}
+          >
+            Profile
+          </h1>
+          <Avatar alt='OSKI' src={logo} sx={{ width: 200, height: 200, align: 'center' }} />
+        </Box>
 
         <Box sx={{ flexGrow: 1, paddingBottom: 20 }}>
           <Grid
             container
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
+            style={{ paddingTop: 50 }}
           >
             <Grid item xs={12} style={{ backgroundColor: "rgba(255, 255, 255, 0.8)", paddingBottom: 5 }} >
               <typography> Liked Games </typography>
@@ -118,16 +119,16 @@ function Profile() {
     );
   } else {
     return (
-      <div>
-        <Container maxWidth="md">
-          <Box sx={{ bgcolor: "#cfe8fc", height: "40vh" }}>
-            <h1 className="profile_page" className="title is-1">
-              Profile
-            </h1>
-            <img src={logo} alt="Logo" />;
-          </Box>
-        </Container>
-      </div>
+      <Box sx={{ flexGrow: 1 }}>
+        <h1
+          className='profile_page'
+          className='title is-1'
+          style={{ backgroundColor: "rgba(255, 255, 255, 0.8)", textAlign: "center" }}
+        >
+          Profile
+        </h1>
+        <Avatar alt='OSKI' src={logo} sx={{ width: 200, height: 200, align: 'center' }} />
+      </Box>
     );
   }
 }

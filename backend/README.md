@@ -10,6 +10,7 @@ A game is represented as JSON array of the following form:
 - **<code>String</code> name**
 - **<code>String</code> description**
 - **<code>String</code> rules**
+- **<code>String</code> link** - An external hyperlink
 - **<code>String</code> creatorName** - username of creator of the game.
 - **<code>Integer</code> minPlayers**
 - **<code>Integer</code> maxPlayers**
