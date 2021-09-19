@@ -1,52 +1,78 @@
 import * as React from "react";
-import Autocomplete from "@mui/material/Autocomplete";
-import TextField from "@mui/material/TextField";
+import { useState, useEffect } from "react";
+import { Autocomplete, Button, TextField, Container } from "@mui/material";
+import postRequest from "../util/postRequest";
 import "./Explore.css";
 import Card from "@mui/material/Card";
 
-const Explore = () => (
-  <div className='root-container'>
-    <div className='top-content-container' id='description'>
-      <h1 className='title is-1'>How to Play the Game</h1>
-      <p>LMFAO</p>
-    </div>
+const Explore = () => {
+  const [searchResults, setSearchResults] = useState([]);
+  const [tags, setTags] = useState([]);
+  const [selectedTags, setSelectedTags] = useState([]);
 
-    <div className='bottom-content-container' id='search bar'>
-      <Autocomplete
-        multiple
-        limitTags={2}
-        id='multiple-limit-tags'
-        options={top100Films}
-        getOptionLabel={option => option.tags}
-        defaultValue={[top100Films[13], top100Films[12], top100Films[11]]}
-        renderInput={params => (
-          <TextField
-            {...params}
-            label='Type In the Game you Wanna Play...'
-            placeholder='Favorites'
-          />
-        )}
-      />
-      <Card></Card>
-    </div>
-    <div></div>
-  </div>
-);
+  useEffect(() => {
+    postRequest("getTags", {}, res => {
+      console.log(res);
+      setTags(res);
+    });
+  }, []);
 
-let top100Films = [];
-for (let i = 0; i < 100; i++) {
-  top100Films.push({
-    UUID: `${i}`,
-    name: `${i}`,
-    description: `${i}`,
-    rules: `${i}`,
-    creatorName: `${i}`,
-    minPlayers: `${i}`,
-    maxPlayers: `${i}`,
-    likes: `${i}`,
-    tags: `${i}`
-  });
-}
-console.log(top100Films);
+  return (
+    <div className='root-container'>
+      <div className='top-content-container' id='description'>
+        <h1 className='title is-1'>How to Play the Game</h1>
+        <p>LMFAO</p>
+      </div>
+
+      <div className='bottom-content-container' id='search bar'>
+        <Autocomplete
+          multiple
+          limitTags={2}
+          id='multiple-limit-tags'
+          options={tags}
+          defaultValue={[]}
+          onChange={(_, value, reason, details) => {
+            setSelectedTags(value);
+            setSearchResults([]);
+          }}
+          renderInput={params => (
+            <TextField
+              {...params}
+              label='Type In the Game you Wanna Play...'
+              placeholder='Favorites'
+            />
+          )}
+        />
+        <br />
+        <Button
+          variant='contained'
+          disableElevation
+          onClick={() => {
+            postRequest("queryGames", { tags: selectedTags }, setSearchResults);
+          }}
+        >
+          Search for Games
+        </Button>
+        <Card>
+          {searchResults
+            .sort((g1, g2) => g2.likes - g1.likes)
+            .map(game => {
+              const { name, likes, UUID } = game;
+              return (
+                <Container
+                  key={UUID}
+                  onClick={() => {
+                    console.log(game);
+                  }}
+                >
+                  {name} {likes}
+                </Container>
+              );
+            })}
+        </Card>
+      </div>
+    </div>
+  );
+};
 
 export default Explore;
